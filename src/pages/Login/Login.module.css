@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.content-wrapper {
+  display: flex;
+  width: 80%;
+  margin-top: 50px;
+}
+
+.body {
+  background-image: url("login-image.jpg"); /* Đặt hình ảnh làm background */
+  background-size: cover; /* Hiển thị hình ảnh đầy đủ kích thước của body */
+  background-repeat: no-repeat;
+  background-position: center; /* Không lặp lại hình ảnh */
+  margin: 0; /* Loại bỏ margin mặc định của body */
+  font-family: Arial, sans-serif; /* Thiết lập font chữ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  flex: 4;
+  font-size: 16px;
+  margin-left: 70px;
+  width: 80vh;
+  height: 80vh;
+  margin-top: 20px;
+}
+
+.form-title {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 30px;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 55vh;
+}
+::placeholder {
+  font-size: 18px;
+}
+
+.input-label {
+  flex: 0 0 100px;
+  font-weight: bold;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  height: 6vh;
+}
+.input1 {
+  margin-left: 70px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.checkbox {
+  margin-left: 30px;
+  width: 17px;
+  height: 17px;
+}
+.remember-label {
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-right: 80px;
+}
+.form-btn {
+  text-align: center;
+}
+
+.form-btn-1 {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+  font-size: 20px;
+  width: 45%;
+  margin-left: 100px;
+  width: 44.5vh;
+  height: 5.5vh;
+  margin-bottom: 30px;
+}
+
+.form-btn-1:hover {
+  background-color: #0056b3;
+}
+
+.form-add-forgot {
+  text-decoration: none;
+  color: #007bff;
+  display: block;
+  font-size: 18px;
+}
+
+.form-add-register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.form-add-register a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-add-register a:hover {
+  text-decoration: underline;
+}
