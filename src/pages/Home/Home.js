@@ -6,31 +6,14 @@ import { faCapsules } from "@fortawesome/free-solid-svg-icons/faCapsules";
 import { faTruckField } from "@fortawesome/free-solid-svg-icons";
 import { faWarehouse } from "@fortawesome/free-solid-svg-icons/faWarehouse";
 import { faChartPie } from "@fortawesome/free-solid-svg-icons/faChartPie";
-import { faHospital } from "@fortawesome/free-solid-svg-icons/faHospital";
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import style from "./Home.module.css";
 import classNames from "classnames/bind";
 import styled from "styled-components";
-import Department from "../../component/department/Department";
-import User from "../../component/user/User";
-import { Link, Route, Routes } from "react-router-dom";
-
-const { Header, Content, Footer, Sider } = Layout;
-
-const CustomMenu = styled(Menu)`
-  .ant-menu-item {
-    height: 70px;
-    color: black;
-  }
-  &.ant-menu {
-    background: #e1eef6;
-  }
-  .ant-menu-submenu-title {
-    height: 70px;
-    color: black;
-  }
-`;
-
+import Siderbar from "../../layout/defaultLayout/Sidebar/Siderbar";
+import HeaderInfor from "../../layout/defaultLayout/Header/HeaderInfor";
+import FooterInfor from "../../layout/defaultLayout/Footer/FooterInfor";
+import routes from "../../config/router";
 const CustomLyou = styled(Layout)`
   &.ant-layout .ant-layout-sider {
     background: #e1eef6;
@@ -41,40 +24,36 @@ const CustomLyou = styled(Layout)`
   }
 `;
 
+const { Content } = Layout;
 const cx = classNames.bind(style);
-const items = [
+export const items = [
   {
     key: "1",
     icon: <HomeFilled />,
-    children: null,
     label: "Trang chủ",
-    path: "/home",
+    path: routes.home,
   },
   {
     key: "2",
     icon: <HomeFilled />,
-    children: null,
     label: "Quản lý khoa-bộ phận",
-    path: "/department",
+    path: routes.departmet,
   },
   {
     key: "3",
     icon: <FontAwesomeIcon icon={faUser} />,
-    children: null,
     label: "Quản lý người dùng",
-    path: "/user",
+    path: routes.user,
   },
   {
     key: "4",
     icon: <FontAwesomeIcon icon={faCapsules} />,
-    children: null,
     label: "Quản lý danh mục thuốc",
-    path: "/medicine",
+    path: routes.drug,
   },
   {
     key: "5",
     icon: <FontAwesomeIcon icon={faTruckField} />,
-    children: null,
     label: "Quản lý nhà cung cấp",
     path: "/supplier",
   },
@@ -108,7 +87,7 @@ const items = [
     path: "/report",
   },
 ];
-const Home = () => {
+const Home = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -122,47 +101,9 @@ const Home = () => {
         background: "#E1EEF6",
       }}
     >
-      <Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
-        width={300}
-      >
-        {collapsed ? (
-          <></>
-        ) : (
-          <div className={cx("logo")}>
-            <FontAwesomeIcon
-              icon={faHospital}
-              size="6x"
-              style={{
-                color: "#1059bf",
-                marginTop: "20px",
-              }}
-            />
-          </div>
-        )}
-
-        <CustomMenu
-          theme="dark"
-          defaultSelectedKeys={["1"]}
-          mode="inline"
-          items={items}
-          className={cx("menu")}
-        ></CustomMenu>
-      </Sider>
+      <Siderbar />
       <Layout className={cx("layout1")}>
-        <Header
-          style={{
-            padding: 0,
-            background: "#87cefa1c",
-          }}
-          className={cx("header")}
-        >
-          <div className={cx("header-text")}>
-            HỆ THỐNG QUẢN LÝ DƯỢC BỆNH VIỆN
-          </div>
-        </Header>
+        <HeaderInfor />
         <Content
           style={{
             margin: "0 16px",
@@ -175,14 +116,11 @@ const Home = () => {
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}
-          ></div>
+          >
+            {children}
+          </div>
         </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-            background: "#E1EEF6",
-          }}
-        ></Footer>
+        <FooterInfor />
       </Layout>
     </CustomLyou>
   );

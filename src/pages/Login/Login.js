@@ -4,7 +4,7 @@ import style from "./Login.module.css";
 import classNames from "classnames/bind";
 import authService from "../../service/auth-service";
 import { useNavigate } from "react-router-dom";
-
+import logo from "./v987-18a.jpg";
 
 const cx = classNames.bind(style);
 
@@ -23,7 +23,7 @@ const Login = () => {
     try {
       await authService.login(userName, password).then(
         () => {
-          navigate("/home");
+          navigate("/");
           window.location.reload();
         },
         (error) => {
@@ -39,27 +39,26 @@ const Login = () => {
       <div className={cx("container")}>
         <div className={cx("content-wrapper")}>
           <form className={cx("form")}>
+            <img src={logo} className={cx("logo-img")} />
             <div className={cx("form-title")}>
-              <h1>MEDICINE MANAGEMENT</h1>
+              <h1>LOGIN</h1>
             </div>
             <div>
               <div className={cx("input")}>
-                <label className={cx("input-label")}> Username</label>
                 <input
                   type="text"
                   value={userName}
                   className={cx("input-field")}
-                  placeholder="Nhập tên tài khoản"
+                  placeholder="Username"
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className={cx("input")}>
-                <label className={cx("input-label")}>Password</label>
                 <input
                   type="password"
                   value={password}
                   className={cx("input-field")}
-                  placeholder="Nhập mật khẩu"
+                  placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>

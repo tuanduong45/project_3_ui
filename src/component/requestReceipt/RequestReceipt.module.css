@@ -1,0 +1,44 @@
+.header {
+  margin-bottom: 10px;
+  background-color: #f8f8f880;
+  padding: 10px 0;
+}
+.code-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+}
+.date-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+}
+.created-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+}
+.department-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+}
+.status-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 40px;
+}
+.panel-text {
+  font-weight: bold;
+  text-align: center;
+}
+.panel {
+  background-color: #f8f8f880;
+}
+.collapse {
+  margin-bottom: 10px;
+}
+.pagination {
+  margin-left: 1300px;
+}

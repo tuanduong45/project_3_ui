@@ -6,6 +6,9 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons/faPenToSquare";
 import { faTrash } from "@fortawesome/free-solid-svg-icons/faTrash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Modal, notification } from "antd";
+import getTokenFromLocalStorage from "../../service/getTokenFromLocalStorage";
+import department from "../../api/department";
+import { useNavigate } from "react-router-dom";
 
 const Department = () => {
   const [data, setData] = useState([]);
@@ -19,21 +22,6 @@ const Department = () => {
   const [modalMode, setModalMode] = useState("add"); // Mặc định là thêm mới
   const [isEditForm, setIsEditForm] = useState(false);
 
-  const getTokenFromLocalStorage = () => {
-    // Lấy dữ liệu từ Local Storage với key là 'token'
-    const tokenData = localStorage.getItem("token");
-
-    // Kiểm tra nếu dữ liệu tồn tại
-    if (tokenData) {
-      // Parse dữ liệu từ JSON về object
-      const tokenObject = JSON.parse(tokenData);
-      // Trả về trường token từ object
-      return tokenObject.token;
-    } else {
-      // Nếu không tìm thấy dữ liệu, trả về null hoặc giá trị mặc định tùy thuộc vào trường hợp của bạn
-      return null;
-    }
-  };
   const auth = getTokenFromLocalStorage();
   useEffect(() => {
     fetchData();
@@ -42,15 +30,11 @@ const Department = () => {
     setLoading(true);
     try {
       // Thực hiện request để lấy dữ liệu từ API
-      const response = await axios.get(
-        "http://localhost:8081/department/getList",
-        {
-          headers: {
-            Authorization: `Bearer ${auth}`,
-          },
-        }
-      );
-      console.log(response);
+      const response = await axios.get(department.getList, {
+        headers: {
+          Authorization: `Bearer ${auth}`,
+        },
+      });
       const modifiedData = response.data.map((item, index) => ({
         ...item,
         stt: index + 1,
@@ -66,23 +50,19 @@ const Department = () => {
     }
   };
 
-  console.log(auth);
   // Gọi hàm để lấy dữ liệu từ API tìm kiếm khi nhập text vào input tìm ki
   const handleSearch = async () => {
     setLoading(true);
     try {
       if (searchText !== "") {
-        const response = await axios.get(
-          "http://localhost:8081/department/getList",
-          {
-            headers: {
-              Authorization: `Bearer ${auth}`,
-            },
-            params: {
-              name: searchText,
-            },
-          }
-        );
+        const response = await axios.get(department.getList, {
+          headers: {
+            Authorization: `Bearer ${auth}`,
+          },
+          params: {
+            name: searchText,
+          },
+        });
         const modifiedData = response.data.map((item, index) => ({
           ...item,
           stt: index + 1,
@@ -116,7 +96,7 @@ const Department = () => {
     // Call API to add new department
     try {
       const response = await axios.post(
-        "http://localhost:8081/department/create",
+        department.create,
         { name, email, phoneNumber, address, code },
         { headers: { Authorization: `Bearer ${auth}` } }
       );
@@ -215,7 +195,7 @@ const Department = () => {
   const handleConfirmDelete = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:8081/department/delete?id=${selectedRecord.id}`,
+        `${department.delete}?id=${selectedRecord.id}`,
         { headers: { Authorization: `Bearer ${auth}` } }
       );
       fetchData();
@@ -248,11 +228,11 @@ const Department = () => {
       const email = form.getFieldValue("email");
       const phoneNumber = form.getFieldValue("phone");
       const address = form.getFieldValue("address");
-      console.log(name);
+      /* console.log(name);
       console.log(email);
       console.log(phoneNumber);
       console.log(address);
-      console.log(selectedRecord.id);
+      console.log(selectedRecord.id); */
       if (!name) {
         notification.error({
           message: "Vui lòng nhập đầy đủ tên Khoa/Bộ phận!",
@@ -261,7 +241,7 @@ const Department = () => {
       }
       // Gọi API cập nhật với các thông tin cập nhật và ID của dòng dữ liệu
       const respose = await axios.put(
-        `http://localhost:8081/department/update?id=${selectedRecord.id}`,
+        `${department.update}?id=${selectedRecord.id}`,
         {
           name,
           email,
@@ -295,7 +275,14 @@ const Department = () => {
           justifyContent: "space-between",
         }}
       >
-        <div style={{ fontSize: "20px", marginBottom: "30px" }}>
+        <div
+          style={{
+            fontSize: "20px",
+            marginBottom: "30px",
+            color: "#2227D6",
+            fontWeight: "bold",
+          }}
+        >
           Quản lý Khoa-Bộ phận
         </div>
         <div

@@ -1,0 +1,50 @@
+.header {
+  margin-bottom: 10px;
+  background-color: #f8f8f880;
+  padding: 10px 0;
+}
+.panel {
+  margin-bottom: 5px;
+  background-color: #f8f8f880;
+}
+.collapse {
+  margin-bottom: 10px;
+}
+.panel-header.panel-text {
+  font-weight: 500;
+  text-align: center;
+}
+.code-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 30px;
+}
+.import-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 10px;
+}
+.created-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0px;
+}
+.status-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 70px;
+}
+.pagination {
+  margin-left: 1300px;
+}
+.form {
+  background-color: rgba(244, 244, 244, 0.521);
+}
+.panel-text {
+  font-weight: bold;
+  text-align: center;
+}

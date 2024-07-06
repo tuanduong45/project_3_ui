@@ -1,0 +1,30 @@
+.sider {
+  width: 250px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.menu {
+  padding-top: 20px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-icon {
+  font-size: 30px;
+  margin-right: 20px;
+}
+.sub-menu-icon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+.menu-title {
+  position: relative;
+  font-weight: 600;
+}
+.sub-menu-title {
+  position: relative;
+  font-weight: 600;
+}

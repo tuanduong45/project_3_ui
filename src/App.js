@@ -1,12 +1,10 @@
 import "./App.css";
-import Login from "./pages/Login/Login";
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
-import SignUpForm from "./pages/SignUp/SignUp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home/Home";
-import Department from "./component/department/Department";
-import User from "./component/user/User";
-import { Switch } from "antd";
 import publicRoutes from "./router";
+import { Fragment } from "react";
+import LoginLayout from "./layout/defaultLayout/LoginLayout/LoginLayout";
 
 function App() {
   return (
@@ -14,8 +12,24 @@ function App() {
       <div className="App">
         <Routes>
           {publicRoutes.map((route, index) => {
-            const Page = route.Component;
-            return <Route key={index} path={route.path} element={<Page />} />;
+            let Layout = Home;
+            let Page = route.component;
+            if (route.layout) {
+              Layout = route.layout;
+            } else if (route.layout === null) {
+              Layout = Fragment;
+            }
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
           })}
         </Routes>
       </div>

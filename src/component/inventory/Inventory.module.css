@@ -1,0 +1,44 @@
+.header {
+  margin-bottom: 10px;
+  background-color: #f8f8f880;
+  padding: 10px 0;
+}
+.panel {
+  margin-bottom: 5px;
+  background-color: #f8f8f880;
+}
+.collapse {
+  margin-bottom: 5px;
+}
+.panel-text {
+  font-weight: bold;
+  text-align: center;
+  margin-left: 10px;
+}
+.code-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+  font-size: large;
+}
+.name-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 30px;
+  font-size: large;
+}
+.total-text {
+  color: #2227d6;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 30px;
+  font-size: large;
+}
+.pagination {
+  margin-left: 1300px;
+}
+.ant-table {
+  margin-top: 10px;
+}

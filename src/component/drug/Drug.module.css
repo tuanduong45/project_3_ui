@@ -1,0 +1,21 @@
+.App {
+  font-family: Arial, sans-serif;
+}
+.panel {
+  background-color: #3122d6;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.categoryNameText {
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  margin-right: 1250px;
+}
+.buttons {
+  margin-left: auto;
+}
+.panelHeader {
+  display: flex;
+  align-items: center;
+}

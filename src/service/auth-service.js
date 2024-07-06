@@ -26,6 +26,7 @@ const login = async (userName, password) => {
       }
     });
 };
+
 const authService = {
   login,
 };

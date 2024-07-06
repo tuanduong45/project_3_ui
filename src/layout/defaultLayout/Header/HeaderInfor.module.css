@@ -1,0 +1,18 @@
+.header-text {
+  color: #1417d4eb;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 400px;
+}
+.bell {
+  margin-left: 250px;
+}
+.user {
+  margin-left: 30px;
+  font-weight: bold;
+}
+.logout {
+  margin-left: 30px;
+  font-weight: bold;
+}
