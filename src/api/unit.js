@@ -1,5 +1,5 @@
 import server from "./hostname";
 const unit = {
-  getList: `"http://${server.hostnamedeploy}api/unit/get-list"`,
+  getList: `"http://${server.host_name_deploy}api/unit/get-list"`,
 };
 export default unit;
