@@ -1,5 +1,7 @@
+import server from "./hostname";
+
 const comboBox = {
-  department: "http://localhost:8081/combo-box/get-lst-department-name-code",
-  role: "http://localhost:8081/combo-box/get-lst-role-name-code",
+  department: `http://${server.hostnamedeploy}/combo-box/get-lst-department-name-code`,
+  role: `http://${server.hostnamedeploy}/combo-box/get-lst-role-name-code`,
 };
 export default comboBox;

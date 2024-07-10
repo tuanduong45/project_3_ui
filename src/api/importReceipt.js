@@ -1,6 +1,6 @@
 const importReceipt = {
-  list: "http://localhost:8081/api/import-receipt/get-lst",
-  getDetail: "http://localhost:8081/api/import-receipt/get-lst-detail",
-  create: "http://localhost:8081/api/import-receipt/create",
+  list: `"http://${server.hostnamedeploy}/api/import-receipt/get-lst"`,
+  getDetail: `"http://${server.hostnamedeploy}/api/import-receipt/get-lst-detail"`,
+  create: `"http://${server.hostnamedeploy}/api/import-receipt/create"`,
 };
 export default importReceipt;

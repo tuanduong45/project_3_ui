@@ -1,4 +1,4 @@
 const unit = {
-  getList: "http://localhost:8081/api/unit/get-list",
+  getList: `"http://${server.hostnamedeploy}api/unit/get-list"`,
 };
 export default unit;

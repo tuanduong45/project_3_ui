@@ -1,9 +1,9 @@
 import host from "./host";
 
 const department = {
-  getList: "http://localhost:8081/department/getList",
-  create: "http://localhost:8081/department/create",
-  delete: "http://localhost:8081/department/delete",
-  update: "http://localhost:8081/department/update",
+  getList: `http://${server.hostnamedeploy}/department/getList`,
+  create: `http://${server.hostnamedeploy}/department/create`,
+  delete: `http://${server.hostnamedeploy}/department/delete`,
+  update: `http://${server.hostnamedeploy}/department/update`,
 };
 export default department;
