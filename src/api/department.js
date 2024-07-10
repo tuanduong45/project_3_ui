@@ -1,5 +1,4 @@
-import host from "./host";
-
+import server from "./hostname";
 const department = {
   getList: `http://${server.hostnamedeploy}/department/getList`,
   create: `http://${server.hostnamedeploy}/department/create`,

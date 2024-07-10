@@ -1,3 +1,4 @@
+import server from "./hostname";
 const drug = {
   getList: `"http://${server.hostnamedeploy}/api/drug/get-list"`,
   create: `"http://${server.hostnamedeploy}/api/drug/create"`,

@@ -1,3 +1,4 @@
+import server from "./hostname";
 const importReceipt = {
   list: `"http://${server.hostnamedeploy}/api/import-receipt/get-lst"`,
   getDetail: `"http://${server.hostnamedeploy}/api/import-receipt/get-lst-detail"`,

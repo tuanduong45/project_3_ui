@@ -1,3 +1,4 @@
+import server from "./hostname";
 const supplier = {
   getList: `"http://${server.hostnamedeploy}api/supplier/get-list"`,
   create: `"http://${server.hostnamedeploy}api/supplier/create"`,

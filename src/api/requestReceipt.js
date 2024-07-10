@@ -1,3 +1,4 @@
+import server from "./hostname";
 const requestReceipt = {
   create: `"http://${server.hostnamedeploy}/api/request-receipt/create"`,
   getList: `"http://${server.hostnamedeploy}/api/request-receipt/get-list"`,

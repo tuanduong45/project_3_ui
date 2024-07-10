@@ -1,3 +1,4 @@
+import server from "./hostname";
 const user = {
   getList: `"http://${server.hostnamedeploy}api/user/get-list"`,
   add: `"http://${server.hostnamedeploy}api/user/create"`,

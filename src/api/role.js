@@ -1,3 +1,4 @@
+import server from "./hostname";
 const role = {
   getRoleName: `"http://${server.hostnamedeploy}/api/role/get-role-name"`,
 };
