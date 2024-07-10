@@ -1,6 +1,7 @@
 import axios from "axios";
+import server from "../api/hostname";
 
-const API_URL = "http://localhost:8081/auth";
+const API_URL = `"http://${server.host_name_deploy}/auth"`;
 
 const login = async (userName, password) => {
   return axios
